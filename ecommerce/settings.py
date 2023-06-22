@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary',
     'storeapp',
     'api',
     'rest_framework',
@@ -91,25 +93,26 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-# import pymysql
-# pymysql.install_as_MySQLdb()
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'mystoredb',
-#         'USER': 'root',
-#         'PASSWORD': 'Tobest@20',
-#         'HOST': '127.0.0.1',  # By default, 'localhost' should work
-#         'PORT': 3006,  # By default, MySQL uses port 3306
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+import pymysql
+pymysql.version_info = (1, 4, 6, 'final', 0)
+pymysql.install_as_MySQLdb()
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'railway',
+        'USER': 'root',
+        'PASSWORD': 'EgQosPAw3J1kkEY7q9WC',
+        'HOST': 'containers-us-west-106.railway.app',  # By default, 'localhost' should work
+        'PORT': 7271,  # By default, MySQL uses port 3306
+    }
+}
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
@@ -164,6 +167,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '/media')
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'doyfzt9fb',
+    'API_KEY': '153266556443375',
+    'API_SECRET': 'TrwyCCQ5r71afKtFO-onNv7Piso'
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 REST_FRAMEWORK = {
     'PAGE_SIZE': 2
 }
