@@ -1,27 +1,13 @@
-from django.shortcuts import render, get_object_or_404
 import requests
-from django.http import JsonResponse
 import uuid
-from django.conf import settings
 from django.http import Http404
 from django.db.models import Q
-from rest_framework.decorators import api_view
 from .serializers import ProductSerializer, CategorySerializer, ReviewSerializer, OrderSerializer, MyOrderSerializer
-from .filters import Productfilter
 from storeapp.models import Product, Category, Review, Order, OrderItem
 from rest_framework.response import Response
-from rest_framework import status
 from rest_framework.views import APIView
-from rest_framework.generics import ListCreateAPIView, ListAPIView, RetrieveAPIView
-from rest_framework.viewsets import ModelViewSet, GenericViewSet
-from rest_framework.mixins import CreateModelMixin, RetrieveModelMixin, DestroyModelMixin
-from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework.filters import SearchFilter, OrderingFilter
-from rest_framework.pagination import PageNumberPagination
 from rest_framework.decorators import api_view, authentication_classes, permission_classes
-from django.conf import settings
 from rest_framework import status, authentication, permissions
-from django.contrib.auth.models import User
 
 
 
