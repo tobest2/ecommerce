@@ -113,21 +113,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'railway',
         'USER': 'root',
-        'PASSWORD': 'EgQosPAw3J1kkEY7q9WC',
-        'HOST': 'containers-us-west-106.railway.app',  # By default, 'localhost' should work
-        'PORT': 7271,  # By default, MySQL uses port 3306
+        'PASSWORD': 'BCO9C2WdK9RHsPQgj59q',
+        'HOST': 'containers-us-west-184.railway.app',  # By default, 'localhost' should work
+        'PORT': 6026,  # By default, MySQL uses port 3306
     }
 }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'freedb_mystoredb',
-#         'USER':'freedb_tobest',
-#         'PASSWORD': 'D**V6wVn4xS!5&p',
-#         'HOST': 'sql.freedb.tech',  # By default, 'localhost' should work
-#         'PORT': 3306 # By default, MySQL us\es port 3306
-#     }
-# }
+
 # # Password validation
 # # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 

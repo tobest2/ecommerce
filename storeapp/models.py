@@ -65,28 +65,7 @@ class Product(models.Model):
             return '' + self.image.url
         return ''
 
-    # def get_thumbnail(self):
-    #     if self.thumbnail:
-    #         return self.thumbnail.url
-    #     else:
-    #         if self.image:
-    #             self.thumbnail = self.make_thumbnail(self.image)
-    #             self.save()
-    #
-    #             return self.thumbnail.url
-    #         else:
-    #             return ''
 
-    # def get_thumbnail(self):
-    #     if self.thumbnail:
-    #         return self.thumbnail.url
-    #     else:
-    #         if self.image:
-    #             self.thumbnail = self.make_thumbnail(self.image)
-    #             self.save()
-    #             return self.thumbnail.url if self.thumbnail else ''
-    #         else:
-    #             return ''
 
     def get_thumbnail(self):
         if self.thumbnail:
@@ -115,57 +94,7 @@ class Product(models.Model):
         thumbnail = cloudinary.uploader.upload(thumbnail_data, folder='thumbnails')
 
         return thumbnail['secure_url']
-    # def make_thumbnail(self, image, size=(300, 200)):
-    #     img = Image.open(image)
-    #     img.convert('RGB')
-    #     img.thumbnail(size)
-    #
-    #     thumb_io = BytesIO()
-    #     img.save(thumb_io, 'JPEG', quality=85)
-    #
-    #     thumbnail = File(thumb_io, name=image.name)
-    #
-    #     return thumbnail
-    # def get_thumbnail(self):
-    #     if self.thumbnail:
-    #         thumbnail_url = self.thumbnail.url
-    #
-    #         # Open the image using PIL
-    #         image = Image.open(self.thumbnail)
-    #
-    #         # Define the maximum thumbnail size (e.g., maximum width of 100 pixels)
-    #         max_thumbnail_width = 100
-    #
-    #         # Calculate the aspect ratio
-    #         aspect_ratio = image.width / image.height
-    #
-    #         # Calculate the maximum thumbnail height based on the aspect ratio
-    #         max_thumbnail_height = int(max_thumbnail_width / aspect_ratio)
-    #
-    #         # Resize the image while preserving the aspect ratio
-    #         image.thumbnail((max_thumbnail_width, max_thumbnail_height))
-    #
-    #         # Create a file-like object to store the resized image
-    #         thumbnail_file = BytesIO()
-    #         image.save(thumbnail_file, format='JPEG')
-    #
-    #         # Create an InMemoryUploadedFile from the file-like object
-    #         thumbnail = InMemoryUploadedFile(
-    #             thumbnail_file,
-    #             None,
-    #             f"{self.thumbnail.name.split('.')[0]}.jpg",
-    #             'image/jpeg',
-    #             thumbnail_file.tell,
-    #             None
-    #         )
-    #
-    #         # Save the resized thumbnail in the same field
-    #         self.thumbnail = thumbnail
-    #
-    #         return thumbnail_url
-    #
-    #     return ''
-    #
+
 
 
 class Order(models.Model):
