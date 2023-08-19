@@ -28,10 +28,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-q9xl&1o--%27w=105dt$(xoeiir)rx&0us0i#v@m0e&7vp7-c#'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1', 'desktop-d083drr', 'tobest.pythonanywhere.com', 'ecom-kdt9.onrender.com']
 FLUTTERWAVE_SECRET_KEY = 'FLWSECK_TEST-a918ce86268653e3db4517bc9e145392-X'
