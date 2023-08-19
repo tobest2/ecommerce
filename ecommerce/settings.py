@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 ALLOWED_HOSTS = ['198.211.99.20', 'localhost', '127.0.0.1', 'desktop-d083drr', 'tobest.pythonanywhere.com', 'ecom-kdt9.onrender.com']
-FLUTTERWAVE_SECRET_KEY = 'FLWSECK_TEST-a918ce86268653e3db4517bc9e145392-X'
+FLUTTERWAVE_SECRET_KEY = os.environ.get('FLUTTERWAVE_SECRET_KEY')
 # Application definition
 
 INSTALLED_APPS = [
