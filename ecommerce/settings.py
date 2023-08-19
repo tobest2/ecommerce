@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 import cloudinary_storage
 import cloudinary
 import cloudinary.uploader
@@ -111,21 +114,14 @@ pymysql.install_as_MySQLdb()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'storedb',
-        'USER': 'admin',
-        'PASSWORD': 'Pharmsega94',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASS'),
         'HOST': 'mydb.crjd0vz8opkn.eu-north-1.rds.amazonaws.com',  # By default, 'localhost' should work
         'PORT': 3306,  # By default, MySQL uses port 3306
-    }
+        'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
 
-# 'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'railway',
-#         'USER': 'root',
-#         'PASSWORD': 'BCO9C2WdK9RHsPQgj59q',
-#         'HOST': 'containers-us-west-184.railway.app',  # By default, 'localhost' should work
-#         'PORT': 6026,  # By default, MySQL uses port 3306
-#     }
+    }
 }
 
 # # Password validation
