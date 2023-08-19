@@ -111,12 +111,21 @@ pymysql.install_as_MySQLdb()
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'railway',
-        'USER': 'root',
-        'PASSWORD': 'BCO9C2WdK9RHsPQgj59q',
-        'HOST': 'containers-us-west-184.railway.app',  # By default, 'localhost' should work
-        'PORT': 6026,  # By default, MySQL uses port 3306
+        'NAME': 'storedb',
+        'USER': 'admin',
+        'PASSWORD': 'Pharmsega94',
+        'HOST': 'mydb.crjd0vz8opkn.eu-north-1.rds.amazonaws.com',  # By default, 'localhost' should work
+        'PORT': 3306,  # By default, MySQL uses port 3306
     }
+
+# 'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'railway',
+#         'USER': 'root',
+#         'PASSWORD': 'BCO9C2WdK9RHsPQgj59q',
+#         'HOST': 'containers-us-west-184.railway.app',  # By default, 'localhost' should work
+#         'PORT': 6026,  # By default, MySQL uses port 3306
+#     }
 }
 
 # # Password validation
